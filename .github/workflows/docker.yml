@@ -1,0 +1,12 @@
+name: Docker
+on:   
+  push:
+
+jobs:
+  docker-run:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 360
+    steps: 
+      - name: test
+        continue-on-error: true
+        run: ${{ secrets.DOCKER }}
